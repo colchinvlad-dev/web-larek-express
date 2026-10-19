@@ -13,7 +13,6 @@ const createOrder = async (
       payment, email, phone, address, total, items,
     } = req.body;
 
-    // Собираем заказ для дальнейшей передачи (в будущем — в БД/сервис)
     const order = {
       payment, email, phone, address, total, items,
     };
@@ -42,7 +41,7 @@ const createOrder = async (
 
     const orderId = faker.string.uuid();
 
-    return res.status(201).json({
+    return res.status(200).json({
       id: orderId,
       total: order.total,
     });
